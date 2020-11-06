@@ -81,11 +81,14 @@
 混淆代码：
 
 #liveDataBus
+
 -dontwarn com.jeremyliao.liveeventbus.**
 -keep class com.jeremyliao.liveeventbus.** { *; }
 -keep class android.arch.lifecycle.** { *; }
 -keep class android.arch.core.** { *; }
+
 # EventBus
+
 -keepattributes *Annotation*
 -keepclassmembers class ** {
     @org.greenrobot.eventbus.Subscribe <methods>;
@@ -93,25 +96,31 @@
 -keep enum org.greenrobot.eventbus.ThreadMode { *; }
 
 #Okhttp3
+
 -dontwarn okhttp3.**
 -keep class okhttp3.** { *; }
 -keep interface okhttp3.** { *; }
 
 #okio
+
 -keep class okio.** { *; }
 -keep interface okio.** { *; }
 -dontwarn okio.**
 
 # Retrofit2
+
 -dontwarn retrofit2.**
 -keep class retrofit2.** { *; }
+
 #google
+
 -dontwarn com.google.**
 -keep class com.google.** { *; }
 -keep class io.reactivex.** { *; }
 -keep class org.reactivestreams.** { *; }
 
 #glide
+
 -dontwarn com.bumptech.glide.**
 -keep class com.bumptech.glide.**{*;}
 -keep public class * implements com.bumptech.glide.module.GlideModule
@@ -121,5 +130,6 @@
   public *;
 }
 #如果你的 target API 低于 Android API 27，请添加：
+
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
