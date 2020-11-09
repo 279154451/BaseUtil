@@ -87,7 +87,7 @@
 -keep class android.arch.lifecycle.** { *; }
 -keep class android.arch.core.** { *; }
 
-# EventBus
+#EventBus
 
 -keepattributes *Annotation*
 -keepclassmembers class ** {
@@ -107,7 +107,7 @@
 -keep interface okio.** { *; }
 -dontwarn okio.**
 
-# Retrofit2
+#Retrofit2
 
 -dontwarn retrofit2.**
 -keep class retrofit2.** { *; }
@@ -123,12 +123,14 @@
 
 -dontwarn com.bumptech.glide.**
 -keep class com.bumptech.glide.**{*;}
+
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public class * extends com.bumptech.glide.AppGlideModule
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
   **[] $VALUES;
-  public *;
+    public *;
 }
+
 #如果你的 target API 低于 Android API 27，请添加：
 
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
